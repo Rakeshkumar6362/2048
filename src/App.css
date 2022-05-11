@@ -27,6 +27,10 @@
 .App-link {
   color: #61dafb;
 }
+.cells{
+  height: 100px;
+  width: 100px;
+}
 
 @keyframes App-logo-spin {
   from {
@@ -35,4 +39,38 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.cellBorder{
+  border :6px solid #bbada0;
+
+}
+.two{
+  background-color:#eee4da;
+  color: #776e65;
+}
+.four{
+  background-color: #ede0c8;
+  color: #776e65;
+}
+.eight{
+  background-color: #f2b179;
+  color: #f9f6f2;
+}
+.sixteen{
+  background-color: #f2b179;
+  color: #f9f6f2;
+}
+.thirtyTwo{
+  background-color: #f67c5f;
+  color: #f9f6f2;
+
+}
+.sixtyFour{
+  color: #f9f6f2;
+  background-color: #f65e3b;
+}
+.onetwentyeight{
+  background-color: #edcf72;
+  color: #f9f6f2;
 }
