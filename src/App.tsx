@@ -9,11 +9,10 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  const mainref = useRef(null);
-  const [firstArr, setfirstArr] = useState<number[]>([2, 2, 0, 0]);
-  const [secondArr, setSecondArr] = useState<number[]>([2, 8, 0, 4]);
-  const [thirdArr, setthirdArr] = useState<number[]>([4, 4, 4, 4]);
-  const [fourthArr, setfourthArr] = useState<number[]>([0, 4, 2, 0]);
+  const [firstArr, setfirstArr] = useState<number[]>([0, 0, 0, 0]);
+  const [secondArr, setSecondArr] = useState<number[]>([0, 0, 0, 0]);
+  const [thirdArr, setthirdArr] = useState<number[]>([0, 0, 0, 0]);
+  const [fourthArr, setfourthArr] = useState<number[]>([0, 0, 0, 0]);
   const [fullArr, setFullArr] = useState<object>({
     firstArr,
     secondArr,
@@ -28,10 +27,43 @@ function App() {
       element.current.focus();
     }
   });
+  const getRandomIndex = () => {
+    return Math.floor(Math.random() * (Math.ceil(3) - Math.ceil(0) + 1));
+  };
 
-  useEffect(() => {
-    console.log(Math.floor(Math.random() * (Math.ceil(3) - Math.ceil(0) + 1)));
-  }, [fullArr]);
+  const getRandomValue = () => {
+    let randomNumber: number = Math.floor(
+      Math.random() * (Math.ceil(3) - Math.ceil(0) + 1)
+    );
+    if (randomNumber === 0) {
+      let index = getRandomIndex();
+      if (firstArr[index] === 0) {
+        firstArr[index] = 2;
+      }
+      setfirstArr(firstArr);
+    }
+    if (randomNumber === 1) {
+      let index = getRandomIndex();
+      if (secondArr[index] === 0) {
+        secondArr[index] = 2;
+      }
+      setSecondArr(secondArr);
+    }
+    if ((randomNumber = 2)) {
+      let index = getRandomIndex();
+      if (thirdArr[index] === 0) {
+        thirdArr[index] = 2;
+      }
+      setthirdArr(thirdArr);
+    }
+    if (randomNumber === 3) {
+      let index = getRandomIndex();
+      if (fourthArr[index] === 0) {
+        fourthArr[index] = 2;
+      }
+      setfourthArr(fourthArr);
+    }
+  };
 
   const filteredArr = (columnArray: number[], arrow: string) => {
     let count1: number = 0;
@@ -239,6 +271,7 @@ function App() {
     });
   };
   const onArrowClick = (e: KeyboardEvent<HTMLDivElement>) => {
+    getRandomValue();
     if (e.key === "ArrowUp") {
       calculateArrowUp();
     }
